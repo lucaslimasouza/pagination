@@ -13,6 +13,11 @@ class PaginationHelper
     pages.size
   end
 
+  def page_item_count(page_index)
+    page = pages[page_index]
+    page ? page.size : -1
+  end
+
   private
 
   attr_reader :items, :pages, :items_per_page
