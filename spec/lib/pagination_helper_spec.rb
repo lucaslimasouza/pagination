@@ -23,4 +23,13 @@ RSpec.describe PaginationHelper do
       expect(subject.page_item_count(2)).to eq -1
     end
   end
+
+  describe '#page_index' do
+    it 'determines what page an item is on' do
+      expect(subject.page_index(5)).to eq 1
+      expect(subject.page_index(2)).to eq 0
+      expect(subject.page_index(20)).to eq -1
+      expect(subject.page_index(-10)).to eq -1
+    end
+  end
 end
